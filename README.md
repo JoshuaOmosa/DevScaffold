@@ -449,8 +449,3 @@ flowchart LR
 - [ ] Add a `pyproject.toml` so it can be installed as a command
 - [ ] Add a LICENSE
 
----
-
-## 13. License
-
-No license file is included yet. Add one (for example MIT) before publishing.
