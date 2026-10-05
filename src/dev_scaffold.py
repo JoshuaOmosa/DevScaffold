@@ -94,7 +94,9 @@ def create_project(name: str, template: str = "php", force: bool = False,
         if path.exists() and not force:
             out(f"Skipped (already exists): {path}")
             continue
-        path.write_text(content, encoding="utf-8", newline="\n")
+        # open() rather than write_text(newline=...), which needs Python 3.10+
+        with open(path, "w", encoding="utf-8", newline="\n") as f:
+            f.write(content)
         out(f"Seeded file: {path}")
 
     return root
